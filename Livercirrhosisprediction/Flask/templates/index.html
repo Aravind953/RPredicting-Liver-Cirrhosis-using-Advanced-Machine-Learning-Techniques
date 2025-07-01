@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liver Cirrhosis Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    form {
+      display: inline-block;
+      text-align: left;
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="number"] {
+      width: 300px;
+      padding: 8px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔬 Liver Cirrhosis Predictor</h1>
+  <form method="POST" action="/predict">
+    {% for i in range(1, 11) %}
+      <label for="feature{{ i }}">Feature {{ i }}:</label>
+      <input type="number" step="any" name="feature{{ i }}" id="feature{{ i }}" required>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+</body>
+</html>
